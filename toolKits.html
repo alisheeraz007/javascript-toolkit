@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Document</title>
+        </head>
+        <body>
+            <p>abc</p>
+        </body>
+        <script>
+        const dog = [
+            {name: "snickers", age: 10},
+            {name: "burno", age: 5}
+        ]
+        
+        //console types
+
+        //1). regular
+        // console.log("hello");
+
+        //2). interpolated
+        // console.log("hello i am %s string", "abc");
+
+        //3). styled
+        // console.log("%c my font size is bigger and my backround is grey", "font-size:20px; background-color:grey;")
+    
+        //4). warning
+        // console.warn("warning")
+    
+        //5). error
+        // console.error("warning")
+
+        //6). info
+        // console.info("info")
+
+        //7). testing and checking conditions
+        // console.assert(1 === 2, "that is wrong")
+
+        //8). clearing console
+        // console.clear()
+
+        //9). selecting dom 
+        // const p = document.querySelector("p");
+        // console.log(p);
+        // console.dir(p);
+
+        //10). grouping together
+        dog.forEach(dog => {
+        console.group(dog.name)
+        console.log(dog.name  + dog.age)
+        console.groupEnd(dog.name)
+        })
+
+        //11). counting
+        console.count("ali")
+        console.count("ali")
+        console.count("ali")
+        console.count("ali")
+
+        //12). timing
+        console.time("fetching data")
+        fetch("http://api.github.com/users/wesbos")
+            .then(data => data.json())
+            .then(data =>{
+                console.timeEnd("fetching data")
+                console.log(data)
+            })
+
+    </script>
+</html>
